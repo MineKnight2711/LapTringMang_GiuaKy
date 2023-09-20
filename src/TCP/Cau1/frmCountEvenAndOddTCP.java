@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -49,11 +50,21 @@ public class frmCountEvenAndOddTCP extends javax.swing.JFrame {
     
     public void onTextChanged()
     {   
-        
         String chuoi= txtInput.getText();
-        if(chuoi.isEmpty()||chuoi.length()>9)
+        if(chuoi.length()>9)
         {
-            JOptionPane.showMessageDialog(null, "Vui long nhap 1 chuoi khong qua 9 ky tu!","Canh bao",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(
+                null,
+                "Vui lòng nhập một chuỗi không quá 9 ký tự!",
+                "Cảnh báo",
+                JOptionPane.ERROR_MESSAGE
+            );
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    txtInput.setText(chuoi.substring(0,9));
+                }
+            });
             return;
         }
         String ketqua="";

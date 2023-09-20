@@ -12,6 +12,7 @@ import java.net.SocketException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -47,9 +48,15 @@ public class frmCountEvenOddUDP extends javax.swing.JFrame {
      public void onTextChanged()
     {   
         String input = txtInput.getText();
-        if(input.isEmpty()||input.length()>9)
+        if(input.length()>9)
         {
             JOptionPane.showMessageDialog(null, "Vui long nhap 1 chuoi khong qua 9 ky tu!","Canh bao",JOptionPane.ERROR_MESSAGE);
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    txtInput.setText(input.substring(0,9));
+                }
+            });
             return;
         }
          try {
