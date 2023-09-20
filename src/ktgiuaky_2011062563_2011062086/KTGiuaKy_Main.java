@@ -4,6 +4,8 @@
  */
 package ktgiuaky_2011062563_2011062086;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author WitherDragon
@@ -16,6 +18,9 @@ public class KTGiuaKy_Main {
     public static void main(String[] args) {
         frmHome home=new frmHome();
         home.setVisible(true);
+        home.setTitle("Lap tring mang-Kiem tra giua ky");
+        ImageIcon img = new ImageIcon("C:\\Users\\Administrator\\Desktop\\Picture\\Icon\\hacker.png");
+        home.setIconImage(img.getImage());
     }
     
 }

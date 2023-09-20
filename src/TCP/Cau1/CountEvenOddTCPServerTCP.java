@@ -6,6 +6,7 @@
 package TCP.Cau1;
 
 
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -16,6 +17,7 @@ import java.net.Socket;
 public class CountEvenOddTCPServerTCP {
     static final int PORT = 1111;
     private ServerSocket server = null;
+//    private boolean isRunning = false;
     public CountEvenOddTCPServerTCP()
     {
         try{
@@ -24,9 +26,10 @@ public class CountEvenOddTCPServerTCP {
     }
     public void action()
     {
+//        isRunning=true;
         Socket socket = null;
         int i=0;
-        System.out.println("Server dang lang nghe...");
+        System.out.println("Server cau 1 dang lang nghe...");
         try{
             while((socket= server.accept())!=null)
             {
@@ -34,11 +37,26 @@ public class CountEvenOddTCPServerTCP {
                 System.out.printf("Thread for Client#%d generating...%n", i++);
             }
             
-        }catch(Exception e)
+        }catch(IOException e)
         {
             e.printStackTrace();
         }
     }
+    
+//    public void stopServer() {
+//        if (isRunning) {
+//            isRunning = false;
+//            try {
+//                if (server != null && !server.isClosed()) {
+//                    server.close();
+//                    System.out.println("Server stopped.");
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
+    
     public static void main(String[] args) {
        new CountEvenOddTCPServerTCP().action();
     }

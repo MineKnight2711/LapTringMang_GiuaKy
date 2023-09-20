@@ -4,26 +4,15 @@
  */
 package ktgiuaky_2011062563_2011062086;
 
-import TCP.Cau1.CountEvenOddTCPServerTCP;
 import TCP.Cau1.frmCountEvenAndOddTCP;
-import TCP.Cau2.FindMinTCPServer;
 import TCP.Cau2.frmFindMinTCP;
-import TCP.Cau3.NameFormatTCPServer;
 import TCP.Cau3.frmNameFormatTCP;
-import TCP.Cau4.MoveArrayTCPServer;
 import TCP.Cau4.frmMoveArrayTCP;
-import UDP.Cau1.CountEvenOddUDPServer;
 import UDP.Cau1.frmCountEvenOddUDP;
-import UDP.Cau2.FindMinUDPServer;
 import UDP.Cau2.frmFindMinUDP;
-import UDP.Cau3.NameFormatUDPServer;
 import UDP.Cau3.frmNameFormatUDP;
-import UDP.Cau4.MoveArrayUDPServer;
 import UDP.Cau4.frmMoveArrayUDP;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.SwingWorker;
+
 
 /**
  *
@@ -34,7 +23,7 @@ public class frmHome extends javax.swing.JFrame {
     
     public frmHome() {
         initComponents();
-        cbSelectedServer.setSelectedIndex(0);
+        runServer=new RunServer();
     }
 
     /**
@@ -46,9 +35,7 @@ public class frmHome extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cbSelectedServer = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        btnRunServer = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         mCau1TCP = new javax.swing.JMenuItem();
@@ -64,16 +51,7 @@ public class frmHome extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kiem tra giua ky");
 
-        cbSelectedServer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cau1 TCP", "Cau2 TCP", "Cau3 TCP", "Cau4 TCP", "Cau1 UDP", "Cau2 UDP", "Cau3 UDP", "Cau4 UDP" }));
-
-        jLabel1.setText("Chon server de chay");
-
-        btnRunServer.setText("Chay server");
-        btnRunServer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRunServerActionPerformed(evt);
-            }
-        });
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LTM.jpg"))); // NOI18N
 
         jMenu1.setText("TCP");
 
@@ -153,26 +131,11 @@ public class frmHome extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRunServer, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(cbSelectedServer, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(79, 79, 79))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbSelectedServer, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addComponent(btnRunServer, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(122, Short.MAX_VALUE))
+            .addComponent(jLabel1)
         );
 
         pack();
@@ -180,78 +143,52 @@ public class frmHome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mCau1TCPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCau1TCPActionPerformed
-
+        runServer.runTcpServer1();
         frmCountEvenAndOddTCP countEvenAndOddTCP =new frmCountEvenAndOddTCP();
         countEvenAndOddTCP.setVisible(true);
     }//GEN-LAST:event_mCau1TCPActionPerformed
 
     private void mCau2TCPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCau2TCPActionPerformed
+        runServer.runTcpServer2();
         frmFindMinTCP findMinTCP =new frmFindMinTCP();
         findMinTCP.setVisible(true);
     }//GEN-LAST:event_mCau2TCPActionPerformed
 
     private void mCau3TCPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCau3TCPActionPerformed
+        runServer.runTcpServer3();
         frmNameFormatTCP findNameFormatTCP =new frmNameFormatTCP();
         findNameFormatTCP.setVisible(true);
     }//GEN-LAST:event_mCau3TCPActionPerformed
 
     private void mmCau4TCPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mmCau4TCPActionPerformed
+        runServer.runTcpServer4();
         frmMoveArrayTCP findMoveArrayTCP =new frmMoveArrayTCP();
         findMoveArrayTCP.setVisible(true);
     }//GEN-LAST:event_mmCau4TCPActionPerformed
 
     private void mCau1UDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCau1UDPActionPerformed
+        runServer.runUdpServer1();
         frmCountEvenOddUDP countEvenAndOddUDP  =new frmCountEvenOddUDP();
         countEvenAndOddUDP.setVisible(true);
     }//GEN-LAST:event_mCau1UDPActionPerformed
 
     private void mCau2UDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCau2UDPActionPerformed
+        runServer.runUdpServer2();
         frmFindMinUDP findMinUDP  =new frmFindMinUDP();
         findMinUDP.setVisible(true);
     }//GEN-LAST:event_mCau2UDPActionPerformed
 
     private void mCau3UDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCau3UDPActionPerformed
+        runServer.runUdpServer3();
         frmNameFormatUDP nameFormatUDP  =new frmNameFormatUDP();
         nameFormatUDP.setVisible(true);
     }//GEN-LAST:event_mCau3UDPActionPerformed
 
     private void mCau4UDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCau4UDPActionPerformed
+        runServer.runUdpServer4();
         frmMoveArrayUDP moveArrayUDP  =new frmMoveArrayUDP();
         moveArrayUDP.setVisible(true);
     }//GEN-LAST:event_mCau4UDPActionPerformed
-
-    private void btnRunServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRunServerActionPerformed
-       runServer=new RunServer();
-       int selectedChoice = cbSelectedServer.getSelectedIndex();
-       switch (selectedChoice) {
-            case 0:
-                runServer.runTcpServer1();
-                break;
-            case 1:
-                runServer.runTcpServer2();
-                break;
-            case 2:
-                runServer.runTcpServer3();
-                break;
-            case 3:
-                runServer.runTcpServer4();
-                break;
-            case 4:
-                runServer.runUdpServer1();
-                break;
-            case 5:
-                runServer.runUdpServer2();
-                break;
-            case 6:
-                runServer.runUdpServer3();
-                break;
-            case 7:
-                runServer.runUdpServer4();
-                break;
-            default:
-                break;
-        }
-    }//GEN-LAST:event_btnRunServerActionPerformed
     
     /**
      * @param args the command line arguments
@@ -289,8 +226,6 @@ public class frmHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRunServer;
-    private javax.swing.JComboBox<String> cbSelectedServer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
