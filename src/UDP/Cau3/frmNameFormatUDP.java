@@ -36,7 +36,8 @@ public class frmNameFormatUDP extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btnExecute = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Chuan hoa ten UDP");
 
         txtResult.setEditable(false);
 

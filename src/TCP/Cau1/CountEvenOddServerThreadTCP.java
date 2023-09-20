@@ -7,21 +7,20 @@ package TCP.Cau1;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.Arrays;
+
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 /*
  *
  * @author WitherDragon
  */
-public class CountEvenOddServerThread implements Runnable{
+public class CountEvenOddServerThreadTCP implements Runnable{
      private Scanner in=null;
     private PrintWriter out =null;
     private Socket socket;
     private String name;
-    public CountEvenOddServerThread (Socket socket,String name) 
+    public CountEvenOddServerThreadTCP (Socket socket,String name) 
             throws IOException  
     {   
            this.socket =socket;

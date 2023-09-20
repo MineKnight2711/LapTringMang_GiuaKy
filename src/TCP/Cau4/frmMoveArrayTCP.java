@@ -51,7 +51,8 @@ public class frmMoveArrayTCP extends javax.swing.JFrame {
         txtMoveCount = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Di chuyen Mang");
 
         jLabel1.setText("Moi nhap so phan tu cua 1 mang");
 

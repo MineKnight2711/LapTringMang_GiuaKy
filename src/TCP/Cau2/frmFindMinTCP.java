@@ -11,9 +11,6 @@ import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.StringJoiner;
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -75,34 +72,34 @@ public class frmFindMinTCP extends javax.swing.JFrame {
           });
     }
     
-    public String loaiBoPhanTuTrung() {
-        if(!txtArray.getText().isEmpty())
-        {
-            String[] numberTokens = txtArray.getText().split(" ");
-
-            Set<Integer> numberSet = new LinkedHashSet<>();
-            for (String token : numberTokens) {
-                numberSet.add(Integer.parseInt(token));
-            }
-
-            int[] numbersArray = new int[numberSet.size()];
-            int index = 0;
-            for (int number : numberSet) {
-                numbersArray[index] = number;
-                index++;
-            }
-
-            return Arrays.toString(numbersArray);
-        }
-        return "";
-    }
+//    public String loaiBoPhanTuTrung() {
+//        if(!txtArray.getText().isEmpty())
+//        {
+//            String[] numberTokens = txtArray.getText().split(" ");
+//
+//            Set<Integer> numberSet = new LinkedHashSet<>();
+//            for (String token : numberTokens) {
+//                numberSet.add(Integer.parseInt(token));
+//            }
+//
+//            int[] numbersArray = new int[numberSet.size()];
+//            int index = 0;
+//            for (int number : numberSet) {
+//                numbersArray[index] = number;
+//                index++;
+//            }
+//
+//            return Arrays.toString(numbersArray);
+//        }
+//        return "";
+//    }
     
     public void arrayOnTextChanged()
     {
-        String[] stringArray = loaiBoPhanTuTrung().split(" ");
+        String[] stringArray = txtArray.getText().split(" ");
         if(stringArray.length!=Integer.parseInt(txtElementCount.getText()))
         {
-            lbError.setText("Ban chua nhap dung so phan tu\nCac phan tu cua mang ko duoc trung nhao");
+            lbError.setText("Ban chua nhap dung so phan tu");
             lbError.setForeground(Color.red);
             return;
         }
@@ -114,7 +111,7 @@ public class frmFindMinTCP extends javax.swing.JFrame {
         
         String ketqua="";
         try{
-            socket =new Socket("127.0.0.1",1111);
+            socket =new Socket("127.0.0.1",2111);
             out = new PrintWriter(socket.getOutputStream(), true);
             in = new Scanner(socket.getInputStream());
             out.println(mangInput); //Truyền chuỗi lên sever
@@ -164,7 +161,8 @@ public class frmFindMinTCP extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         lbError = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Tim 2 so nho nhat");
 
         jLabel1.setText("Moi nhap so phan tu cua 1 mang");
 

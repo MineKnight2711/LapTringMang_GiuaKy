@@ -4,7 +4,6 @@
  */
 package UDP.Cau3;
 
-import UDP.Cau1.*;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -13,6 +12,10 @@ import java.net.SocketException;
 
 public class NameFormatUDPServer {
    public static void main(String[] args) throws SocketException, IOException {
+        runServer();
+
+    }
+   public static void runServer() throws SocketException, IOException {
         DatagramSocket serverSocket = new DatagramSocket(1114);
         System.out.println("Server đã sẵn sàng");
 
@@ -31,7 +34,6 @@ public class NameFormatUDPServer {
             DatagramPacket toclient = new DatagramPacket(outtoclient, length, add, port);
             serverSocket.send(toclient);
         }
-        
     }
     public static String formatName(String name) {
         // Cat chuoi ten thanh tung tu
@@ -51,5 +53,7 @@ public class NameFormatUDPServer {
         return formattedName.toString().trim();
     
     }
+
+    
    
 }

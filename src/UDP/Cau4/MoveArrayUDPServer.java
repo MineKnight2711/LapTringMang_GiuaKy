@@ -4,20 +4,18 @@
  */
 package UDP.Cau4;
 
-import UDP.Cau2.*;
-import static TCP.Cau2.FindMinTCPServerTheard.findMinAndSecondMin;
-import static TCP.Cau4.MoveArrayTCPServerTheard.rotateLeft;
-import UDP.Cau1.*;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
-import java.util.Arrays;
 
 public class MoveArrayUDPServer {
    public static void main(String[] args) throws SocketException, IOException {
-        DatagramSocket serverSocket = new DatagramSocket(1114);
+        runServer();
+   }
+   public static void runServer() throws SocketException, IOException{
+       DatagramSocket serverSocket = new DatagramSocket(1115);
         System.out.println("Server đã sẵn sàng");
 
         while (true) {
@@ -38,9 +36,8 @@ public class MoveArrayUDPServer {
             DatagramPacket toclient = new DatagramPacket(outtoclient, length, add, port);
             serverSocket.send(toclient);
         }
-        
     }
-     public static String rotateLeft(String input, int movecount) {
+    public static String rotateLeft(String input, int movecount) {
         String[] tokens = input.split(" ");
         int length = tokens.length;
 
@@ -57,5 +54,4 @@ public class MoveArrayUDPServer {
 
         return rotatedString.toString();
     }
-   
 }

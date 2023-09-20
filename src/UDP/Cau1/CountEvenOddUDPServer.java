@@ -11,10 +11,12 @@ import java.net.InetAddress;
 import java.net.SocketException;
 
 public class CountEvenOddUDPServer {
-   public static void main(String[] args) throws SocketException, IOException {
-        DatagramSocket serverSocket = new DatagramSocket(1112);
+   public static void main(String[] args) throws IOException {
+        runServer();
+   }
+   public static void runServer()throws SocketException, IOException {
+       DatagramSocket serverSocket = new DatagramSocket(1112);
         System.out.println("Server đã sẵn sàng");
-
         while (true) {
             byte infromclient[] = new byte[256];
             DatagramPacket fromclient = new DatagramPacket(infromclient, infromclient.length);
@@ -30,8 +32,7 @@ public class CountEvenOddUDPServer {
             DatagramPacket toclient = new DatagramPacket(outtoclient, length, add, port);
             serverSocket.send(toclient);
         }
-        
-    }
+   }
     public static String countOddEven(String numberString) {
         int oddCount = 0;
         int evenCount = 0;

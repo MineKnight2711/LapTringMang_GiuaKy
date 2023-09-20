@@ -13,10 +13,10 @@ import java.net.Socket;
  *
  * @author ad
  */
-public class CountEvenOddTCPServer {
+public class CountEvenOddTCPServerTCP {
     static final int PORT = 1111;
     private ServerSocket server = null;
-    public CountEvenOddTCPServer()
+    public CountEvenOddTCPServerTCP()
     {
         try{
             server = new ServerSocket(PORT);
@@ -30,7 +30,7 @@ public class CountEvenOddTCPServer {
         try{
             while((socket= server.accept())!=null)
             {
-                new CountEvenOddServerThread(socket, "Client#"+i);
+                new CountEvenOddServerThreadTCP(socket, "Client#"+i);
                 System.out.printf("Thread for Client#%d generating...%n", i++);
             }
             
@@ -40,7 +40,7 @@ public class CountEvenOddTCPServer {
         }
     }
     public static void main(String[] args) {
-       new CountEvenOddTCPServer().action();
+       new CountEvenOddTCPServerTCP().action();
     }
     
 }

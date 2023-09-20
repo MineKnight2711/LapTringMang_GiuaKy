@@ -4,17 +4,19 @@
  */
 package UDP.Cau2;
 
-import static TCP.Cau2.FindMinTCPServerTheard.findMinAndSecondMin;
-import UDP.Cau1.*;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
-import java.util.Arrays;
+
 
 public class FindMinUDPServer {
    public static void main(String[] args) throws SocketException, IOException {
+              runServer();
+   }
+   
+   public static void runServer()throws SocketException, IOException{
         DatagramSocket serverSocket = new DatagramSocket(1113);
         System.out.println("Server đã sẵn sàng");
 
@@ -26,7 +28,7 @@ public class FindMinUDPServer {
             String data = new String(fromclient.getData(), 0, fromclient.getLength()).trim();
             String[] input=data.split("@");
             int sophantu=Integer.parseInt(input[0]);
-           
+
             String chuoimang= input[1];
             System.out.println(chuoimang);
             String[] numberTokens =chuoimang.split(" ");
@@ -44,8 +46,7 @@ public class FindMinUDPServer {
             DatagramPacket toclient = new DatagramPacket(outtoclient, length, add, port);
             serverSocket.send(toclient);
         }
-        
-    }
+   }
     public static String findMinAndSecondMin(int[] arr) {
         if(arr.length>1)
         {

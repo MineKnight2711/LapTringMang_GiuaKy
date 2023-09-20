@@ -15,13 +15,13 @@ import javax.swing.event.DocumentListener;
  *
  * @author WitherDragon
  */
-public class frmCountEvenAndOdd extends javax.swing.JFrame {
+public class frmCountEvenAndOddTCP extends javax.swing.JFrame {
 
     private Socket socket = null;
     private PrintWriter out= null;
     private Scanner in = null;
     
-    public frmCountEvenAndOdd() {
+    public frmCountEvenAndOddTCP() {
         initComponents();
         txtInput.requestFocus();
         createOnTextChangeEvent();
@@ -87,7 +87,8 @@ public class frmCountEvenAndOdd extends javax.swing.JFrame {
         txtResult = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Dem chan le TCP");
 
         jLabel1.setText("Moi nhap 1 so nguyen");
 
@@ -145,20 +146,21 @@ public class frmCountEvenAndOdd extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmCountEvenAndOdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmCountEvenAndOddTCP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmCountEvenAndOdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmCountEvenAndOddTCP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmCountEvenAndOdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmCountEvenAndOddTCP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmCountEvenAndOdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmCountEvenAndOddTCP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmCountEvenAndOdd().setVisible(true);
+                new frmCountEvenAndOddTCP().setVisible(true);
             }
         });
     }

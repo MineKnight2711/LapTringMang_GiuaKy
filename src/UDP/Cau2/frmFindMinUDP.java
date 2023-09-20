@@ -4,19 +4,14 @@
  */
 package UDP.Cau2;
 
-import UDP.Cau1.*;
 import java.awt.Color;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
-import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -88,34 +83,34 @@ public class frmFindMinUDP extends javax.swing.JFrame {
         }
     }
      
-    public String loaiBoPhanTuTrung() {
-        if(!txtArray.getText().isEmpty())
-        {
-            String[] numberTokens = txtArray.getText().split(" ");
-
-            Set<Integer> numberSet = new LinkedHashSet<>();
-            for (String token : numberTokens) {
-                numberSet.add(Integer.parseInt(token));
-            }
-
-            int[] numbersArray = new int[numberSet.size()];
-            int index = 0;
-            for (int number : numberSet) {
-                numbersArray[index] = number;
-                index++;
-            }
-
-            return Arrays.toString(numbersArray);
-        }
-        return "";
-    } 
+//    public String loaiBoPhanTuTrung() {
+//        if(!txtArray.getText().isEmpty())
+//        {
+//            String[] numberTokens = txtArray.getText().split(" ");
+//
+//            Set<Integer> numberSet = new LinkedHashSet<>();
+//            for (String token : numberTokens) {
+//                numberSet.add(Integer.parseInt(token));
+//            }
+//
+//            int[] numbersArray = new int[numberSet.size()];
+//            int index = 0;
+//            for (int number : numberSet) {
+//                numbersArray[index] = number;
+//                index++;
+//            }
+//
+//            return Arrays.toString(numbersArray);
+//        }
+//        return "";
+//    } 
      
      public void arrayOnTextChanged()
     {   
-        String[] stringArray = loaiBoPhanTuTrung().split(" ");
+        String[] stringArray = txtArray.getText().split(" ");
         if(stringArray.length!=Integer.parseInt(txtElementCount.getText()))
         {
-            lbError.setText("Ban chua nhap dung so phan tu \n Cac phan tu cua mang ko duoc trung nhao");
+            lbError.setText("Ban chua nhap dung so phan tu ");
             lbError.setForeground(Color.red);
             return;
         }
@@ -167,7 +162,8 @@ public class frmFindMinUDP extends javax.swing.JFrame {
 
         txtResult.setEditable(false);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Tim 2 so nho nhat UDP");
 
         txtElementCount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

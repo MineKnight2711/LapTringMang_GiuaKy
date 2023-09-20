@@ -10,7 +10,6 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -47,7 +46,8 @@ public class frmMoveArrayUDP extends javax.swing.JFrame {
 
         txtResult.setEditable(false);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Di chuyen mang UDP");
 
         txtElementCount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,7 +184,7 @@ public class frmMoveArrayUDP extends javax.swing.JFrame {
            byte out[] = input.getBytes();
            int length = out.length;
            InetAddress address = InetAddress.getByName("localhost");
-           int port = 1114;
+           int port = 1115;
 
            DatagramPacket sendData = new DatagramPacket(out, length, address, port);
            clientsocket.send(sendData);

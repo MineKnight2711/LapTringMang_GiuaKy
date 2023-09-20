@@ -4,19 +4,12 @@
  */
 package TCP.Cau3;
 
-import TCP.Cau2.*;
-import java.awt.Color;
+
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.Arrays;
-import java.util.LinkedHashSet;
+
 import java.util.Scanner;
-import java.util.Set;
-import java.util.StringJoiner;
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
+
 
 /**
  *
@@ -48,7 +41,8 @@ public class frmNameFormatTCP extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnExecute = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Chuan hoa ten");
 
         jLabel1.setText("Moi nhap ho va ten");
 
@@ -102,7 +96,7 @@ public class frmNameFormatTCP extends javax.swing.JFrame {
         
         String ketqua="";
         try{
-            socket =new Socket("127.0.0.1",1111);
+            socket =new Socket("127.0.0.1",3111);
             out = new PrintWriter(socket.getOutputStream(), true);
             in = new Scanner(socket.getInputStream());
             out.println(mangInput); //Truyền chuỗi lên sever

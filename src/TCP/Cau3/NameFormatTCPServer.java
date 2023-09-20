@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package TCP.Cau3;
 
-import TCP.Cau2.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -14,7 +9,7 @@ import java.net.Socket;
  * @author ad
  */
 public class NameFormatTCPServer {
-    static final int PORT = 1111;
+    static final int PORT = 3111;
     private ServerSocket server = null;
     public NameFormatTCPServer()
     {
