@@ -48,6 +48,7 @@ public class frmFindMinUDP extends javax.swing.JFrame {
     
     private void createArrayOnTextChangeEvent()
     {
+        
         txtArray.getDocument().addDocumentListener(new DocumentListener() {
 
             @Override

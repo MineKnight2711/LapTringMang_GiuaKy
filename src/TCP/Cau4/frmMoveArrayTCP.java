@@ -5,16 +5,12 @@
 package TCP.Cau4;
 
 
-import java.awt.Color;
+
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.Arrays;
-import java.util.LinkedHashSet;
 import java.util.Scanner;
-import java.util.Set;
 import javax.swing.JOptionPane;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
+
 
 /**
  *

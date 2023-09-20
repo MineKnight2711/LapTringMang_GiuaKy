@@ -25,15 +25,15 @@ public class FindMinUDPServer {
             DatagramPacket fromclient = new DatagramPacket(infromclient, infromclient.length);
 
             serverSocket.receive(fromclient);
+            
             String data = new String(fromclient.getData(), 0, fromclient.getLength()).trim();
             String[] input=data.split("@");
-            int sophantu=Integer.parseInt(input[0]);
-
             String chuoimang= input[1];
             System.out.println(chuoimang);
             String[] numberTokens =chuoimang.split(" ");
-
+            //Tạo 1 mảng số nguyên có độ dài bằng mảng numberTokens 
             int[] numbersArray = new int[numberTokens.length];
+            //Duyệt từng phần tử của mảng numberTokens và đưa vào mảng numbersArray
             for (int i = 0; i < numberTokens.length; i++) {
                 numbersArray[i] = Integer.parseInt(numberTokens[i]);
             }
@@ -50,14 +50,19 @@ public class FindMinUDPServer {
     public static String findMinAndSecondMin(int[] arr) {
         if(arr.length>1)
         {
+            //Khởi tạo 2 số nguyên nhỏ nhất trong mảng với giá trị số nguyên lớn nhất
             int min = Integer.MAX_VALUE;
             int secondMin = Integer.MAX_VALUE;
-
+            //Duyệt từng phần tử của mảng arr được truyền vào
             for (int num : arr) {
+                //Nếu num nhỏ hơn min, nó sẽ cập nhật secondMin thành giá trị hiện tại của min và cập nhật min thành giá trị của num. 
+                //Nó đảm bảo rằng min luôn chứa giá trị tối thiểu được tìm thấy, và secondMin chứa giá trị nho được tìm thấy.
                 if (num < min) {
                     secondMin = min;
                     min = num;
-                } else if (num < secondMin && num != min) {
+                }
+                //Nếu num lớn hơn hoặc bằng min nhưng nhỏ hơn secondMin (và không bằng min), nó sẽ cập nhật secondMin thành giá trị của num.
+                else if (num < secondMin && num != min) {
                     secondMin = num;
                 }
             }

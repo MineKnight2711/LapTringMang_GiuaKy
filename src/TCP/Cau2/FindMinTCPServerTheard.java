@@ -36,7 +36,6 @@ public class FindMinTCPServerTheard implements Runnable{
             {
                 String chuoi = in.nextLine().trim();
                 String[] input=chuoi.split("@");
-                int sophantu=Integer.parseInt(input[0]);
                 String chuoimang= input[1];
                 String[] numberTokens =chuoimang.split(" ");
 
