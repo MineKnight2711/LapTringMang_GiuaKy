@@ -5,10 +5,15 @@
 package TCP.Cau3;
 
 
+import java.awt.Color;
 import java.io.PrintWriter;
 import java.net.Socket;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 
 /**
@@ -24,8 +29,42 @@ public class frmNameFormatTCP extends javax.swing.JFrame {
     public frmNameFormatTCP() {
         initComponents();
         txtName.requestFocus();
+        createOnTextChangeEvent();
     }
-   
+    private void createOnTextChangeEvent()
+    {
+        txtName.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                onTextChanged();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                onTextChanged();    
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                onTextChanged();
+            }
+          });
+    }
+     public void onTextChanged()
+    {   
+        String chuoi= txtName.getText();
+        if (isNumber(chuoi)) {
+            lbError.setText("Vui lòng không nhap so vào tên!");
+            lbError.setForeground(Color.red);
+            txtResult.setText("");
+        } else {
+            lbError.setText("");
+        }
+    }
+     
+    private boolean isNumber(String input) {
+        return Pattern.matches(".*\\d.*", input);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,6 +79,7 @@ public class frmNameFormatTCP extends javax.swing.JFrame {
         txtResult = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btnExecute = new javax.swing.JButton();
+        lbError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Chuan hoa ten");
@@ -70,6 +110,10 @@ public class frmNameFormatTCP extends javax.swing.JFrame {
                     .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                     .addComponent(txtResult))
                 .addContainerGap(90, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(lbError, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,7 +128,9 @@ public class frmNameFormatTCP extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(63, 63, 63))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lbError, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
         );
 
         pack();
@@ -182,6 +228,7 @@ public class frmNameFormatTCP extends javax.swing.JFrame {
     private javax.swing.JButton btnExecute;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lbError;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtResult;
     // End of variables declaration//GEN-END:variables
