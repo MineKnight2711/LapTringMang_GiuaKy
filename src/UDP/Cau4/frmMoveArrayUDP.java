@@ -67,6 +67,7 @@ public class frmMoveArrayUDP extends javax.swing.JFrame {
             }
         });
 
+        txtKetQua.setEditable(false);
         txtKetQua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtKetQuaActionPerformed(evt);

@@ -164,6 +164,8 @@ public class frmFindMinTCP extends javax.swing.JFrame {
 
         jLabel1.setText("Moi nhap so phan tu cua 1 mang");
 
+        txtResult.setEditable(false);
+
         jLabel2.setText("Ket qua");
 
         jLabel3.setText("Moi nhap mang");

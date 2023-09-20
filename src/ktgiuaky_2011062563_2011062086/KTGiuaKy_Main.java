@@ -12,15 +12,11 @@ import javax.swing.ImageIcon;
  */
 public class KTGiuaKy_Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         frmHome home=new frmHome();
         home.setVisible(true);
         home.setTitle("Lap tring mang-Kiem tra giua ky");
-        ImageIcon img = new ImageIcon("C:\\Users\\Administrator\\Desktop\\Picture\\Icon\\hacker.png");
+        ImageIcon img = new ImageIcon("C:\\Users\\Administrator\\Desktop\\Picture\\Icon\\it.png");
         home.setIconImage(img.getImage());
-    }
-    
+    } 
 }

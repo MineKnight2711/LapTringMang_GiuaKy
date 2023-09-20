@@ -4,7 +4,6 @@
  */
 package UDP.Cau3;
 
-import UDP.Cau1.*;
 import java.awt.Color;
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -14,7 +13,6 @@ import java.net.SocketException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
-import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -25,7 +23,7 @@ public class frmNameFormatUDP extends javax.swing.JFrame {
      */
     public frmNameFormatUDP() {
         initComponents();
-        txtResult.requestFocus();
+        txtName.requestFocus();
         createOnTextChangeEvent();
     }
     private void createOnTextChangeEvent()

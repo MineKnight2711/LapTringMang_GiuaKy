@@ -92,6 +92,8 @@ public class frmCountEvenAndOddTCP extends javax.swing.JFrame {
 
         jLabel1.setText("Moi nhap 1 so nguyen");
 
+        txtResult.setEditable(false);
+
         jLabel2.setText("Ket qua");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

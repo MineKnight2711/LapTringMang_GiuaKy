@@ -86,6 +86,8 @@ public class frmNameFormatTCP extends javax.swing.JFrame {
 
         jLabel1.setText("Moi nhap ho va ten");
 
+        txtResult.setEditable(false);
+
         jLabel2.setText("Ket qua");
 
         btnExecute.setText("Chuan hoa ten");
