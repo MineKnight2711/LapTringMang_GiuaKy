@@ -10,7 +10,7 @@ import java.net.Socket;
 
 /**
  *
- * @author ad
+ * @author WitherDragon
  */
 public class FindMinTCPServer {
     static final int PORT = 2111;

@@ -6,7 +6,7 @@ import java.net.Socket;
 
 /**
  *
- * @author ad
+ * @author WitherDragon
  */
 public class NameFormatTCPServer {
     static final int PORT = 3111;
