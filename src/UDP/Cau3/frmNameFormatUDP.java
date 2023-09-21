@@ -176,7 +176,7 @@ public class frmNameFormatUDP extends javax.swing.JFrame {
              System.out.println(e.toString());
         }
     }//GEN-LAST:event_btnExecuteActionPerformed
-    //Gui so va tuy chon phep tinh
+
     
     /**
      * @param args the command line arguments

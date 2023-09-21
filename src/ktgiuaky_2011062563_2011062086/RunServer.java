@@ -17,6 +17,9 @@ import javax.swing.SwingWorker;
 
 public class RunServer {
     public void runTcpServer1(){
+        //SwingWorker là 1 lớp trong java để thực hiện 1 công việc dưới nền để tương tác với giao diện Swing một cách an toàn
+        //Điều này làm cho việc thực hiện máy chủ TCP hay UDP không chặn luồng chính của giao diện người dùng (UI)
+        
         SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
             @Override
             protected Void doInBackground() throws Exception {
