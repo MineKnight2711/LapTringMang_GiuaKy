@@ -55,7 +55,7 @@ public class CountEvenOddUDPServer {
             }
         }
         
-        String result = oddCount+" "+ evenCount ;
+        String result = "Kết quả:"+"Số lẻ là "+oddCount+" "+" Số chẵn là"+ evenCount ;
         return result;
     }
    

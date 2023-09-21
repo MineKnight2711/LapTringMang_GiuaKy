@@ -66,7 +66,7 @@ public class FindMinUDPServer {
                     secondMin = num;
                 }
             }
-            String result=min+" "+secondMin;
+            String result = "Ket qua:"+"số nhỏ nhất "+min+" "+" số nhỏ thứ hai"+ secondMin ;
             return result;
         }
         return "";

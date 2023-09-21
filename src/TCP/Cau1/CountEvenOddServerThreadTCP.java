@@ -71,7 +71,7 @@ public class CountEvenOddServerThreadTCP implements Runnable{
             }
         }
         
-        String result = oddCount+" "+ evenCount ;
+        String result = "Ket qua:"+"Số lẻ là "+oddCount+" "+" Số chẵn là"+ evenCount ;
         return result;
     }
 }
