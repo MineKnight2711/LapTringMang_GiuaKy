@@ -59,6 +59,22 @@ public class frmCountEvenOddUDP extends javax.swing.JFrame {
             });
             return;
         }
+        if(!containsOnlyNumbers(input)&&!input.isEmpty())
+        {
+            JOptionPane.showMessageDialog(
+                null,
+                "Chỉ cho phép nhập số!",
+                "Cảnh báo",
+                JOptionPane.ERROR_MESSAGE
+            );
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    txtInput.setText("");
+                }
+            });
+            return;
+        }
          try {
             DatagramSocket clientsocket = new DatagramSocket();
             System.out.println("Kết nối server");
@@ -86,6 +102,9 @@ public class frmCountEvenOddUDP extends javax.swing.JFrame {
         } catch (IOException e) {
              System.out.println(e.toString());
         }
+    }
+    private boolean containsOnlyNumbers(String input) {
+        return input.matches("[\\d\\s]+");
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

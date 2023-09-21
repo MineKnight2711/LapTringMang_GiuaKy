@@ -60,10 +60,13 @@ public class FindMinTCPServerTheard implements Runnable{
     public static String findMinAndSecondMin(int[] arr) {
         if(arr.length>1)
         {
+            //Khởi tạo 2 số nguyên nhỏ nhất trong mảng với giá trị số nguyên lớn nhất
             int min = Integer.MAX_VALUE;
             int secondMin = Integer.MAX_VALUE;
-
+             //Duyệt từng phần tử của mảng arr được truyền vào
             for (int num : arr) {
+                //Nếu num nhỏ hơn min, nó sẽ cập nhật secondMin thành giá trị hiện tại của min và cập nhật min thành giá trị của num. 
+                //Nó đảm bảo rằng min luôn chứa giá trị tối thiểu được tìm thấy, và secondMin chứa giá trị nho được tìm thấy.
                 if (num < min) {
                     secondMin = min;
                     min = num;

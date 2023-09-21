@@ -12,7 +12,7 @@ import java.net.Socket;
 
 /**
  *
- * @author ad
+ * @author witherdragon
  */
 public class CountEvenOddTCPServerTCP {
     static final int PORT = 1111;

@@ -7,6 +7,7 @@ package TCP.Cau1;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.event.DocumentEvent;
@@ -67,6 +68,22 @@ public class frmCountEvenAndOddTCP extends javax.swing.JFrame {
             });
             return;
         }
+        if(!containsOnlyNumbers(chuoi)&&!chuoi.isEmpty())
+        {
+            JOptionPane.showMessageDialog(
+                null,
+                "Chỉ cho phép nhập số!",
+                "Cảnh báo",
+                JOptionPane.ERROR_MESSAGE
+            );
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    txtInput.setText("");
+                }
+            });
+            return;
+        }
         String ketqua="";
         try{
             socket =new Socket("127.0.0.1",1111);
@@ -83,6 +100,9 @@ public class frmCountEvenAndOddTCP extends javax.swing.JFrame {
                 }catch(Exception ex){e.printStackTrace();}
             e.printStackTrace();
         }
+    }
+    private boolean containsOnlyNumbers(String input) {
+        return input.matches("[\\d\\s]+");
     }
     /**
      * This method is called from within the constructor to initialize the form.

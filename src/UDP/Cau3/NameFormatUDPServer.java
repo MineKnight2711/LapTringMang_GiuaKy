@@ -35,6 +35,7 @@ public class NameFormatUDPServer {
             serverSocket.send(toclient);
         }
     }
+   
     public static String formatName(String name) {
         // Cat chuoi ten thanh tung tu
         String[] words = name.split("\\s+");
@@ -53,7 +54,4 @@ public class NameFormatUDPServer {
         return formattedName.toString().trim();
     
     }
-
-    
-   
 }
