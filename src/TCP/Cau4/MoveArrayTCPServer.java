@@ -11,7 +11,7 @@ import java.net.Socket;
 
 /**
  *
- * @author ad
+ * @author WitherDragon
  */
 public class MoveArrayTCPServer {
     static final int PORT = 4111;
